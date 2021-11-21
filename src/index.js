@@ -39,4 +39,6 @@ app.use("/api/auth", auth());
 app.use("/api/movies", movies());
 app.use("/api/seanses", seanses());
 
-app.listen(config.server.port, process.env.PORT || 5000);
+app.listen(config.server.port, () => {
+  console.log(`API server works at port:` + config.server.port);
+});
