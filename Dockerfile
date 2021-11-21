@@ -15,7 +15,5 @@ RUN npm install
 # Copy app source code
 COPY . .
 
-# Exports
-EXPOSE 80
 
 CMD ["npm","run", "dev"]

@@ -39,19 +39,4 @@ app.use("/api/auth", auth());
 app.use("/api/movies", movies());
 app.use("/api/seanses", seanses());
 
-app.listen(config.server.port, () => {
-  console.log(`API server works at port:` + config.server.port);
-});
-
-//For avoidong Heroku $PORT error
-app
-  .get("/", function (request, response) {
-    var result = "App is running";
-    response.send(result);
-  })
-  .listen(app.get("port"), function () {
-    console.log(
-      "App is running, server is listening on port ",
-      app.get("port")
-    );
-  });
+app.listen(process.env.PORT || 5000);
